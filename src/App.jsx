@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import { UseExample1 } from './components/useExample1/JokeUseEffect';
-import { UseExample2 } from './components/useExample2/Posts';
+import { UseExample2 } from './components/useExample2/PostsUseEffect';
 import { UseExample3 } from './components/useExample3/Message';
 import { UseExampleContext } from './components/useExampleContext/Theme';
 import { ActionExample1 } from './components/actionExample1/Posts';
