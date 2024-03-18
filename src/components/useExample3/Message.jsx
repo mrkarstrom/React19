@@ -1,20 +1,20 @@
 import { use, useState, Suspense } from 'react';
 
 // Simulate fetching a message
-function fetchMessage() {
-  return new Promise((resolve) => setTimeout(resolve, 1000, '⚛️'));
-}
+const fetchMessage = () => {
+  return new Promise((resolve) => setTimeout(resolve, 1000, '*'));
+};
 
 // MessageOutput component
 const MessageOutput = ({ messagePromise }) => {
   const messageContent = use(messagePromise);
-  return <p className='text-xl'>Here is the message: {messageContent}</p>;
+  return <p className="text-xl">Here is the message: {messageContent}</p>;
 };
 
 // MessageContainer component
 const MessageContainer = ({ messagePromise }) => {
   return (
-    <Suspense fallback={<p className='text-xl'>⌛Downloading message...</p>}>
+    <Suspense fallback={<p className="text-xl">⌛ Currently Downloading message...</p>}>
       <MessageOutput messagePromise={messagePromise} />
     </Suspense>
   );
@@ -26,7 +26,7 @@ const Message = () => {
 
   const [show, setShow] = useState(false);
 
-  function download() {
+  const download = () => {
     setMessagePromise(fetchMessage());
     setShow(true);
   }
@@ -36,7 +36,7 @@ const Message = () => {
   } else {
     return (
       <button
-        className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         onClick={download}
       >
         Download message
